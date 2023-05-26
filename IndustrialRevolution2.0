@@ -1,0 +1,45 @@
+function OnEvent(event, arg)
+	if (event == "MOUSE_BUTTON_RELEASED" and arg == 9) then
+
+		if (not IsKeyLockOn("capslock")) then
+			PressKey("capslock")
+			Sleep(5)
+			ReleaseKey("capslock")
+
+		end
+fragment3()
+end
+
+function fragment3()
+while (IsKeyLockOn("capslock")) do
+x,y=GetMousePosition()
+for i=1,9,1 do
+PressAndReleaseMouseButton(1)
+Sleep(700)
+end
+Sleep(200)
+PressAndReleaseKey("f1")
+Sleep(1000)
+for i=0,10,1 do
+MoveMouseRelative(7,-7)
+Sleep(10)
+end
+Sleep(200)
+for i=0,10,1 do
+MoveMouseRelative(4,0)
+Sleep(10)
+end
+Sleep(200)
+for i=1,9,1 do
+PressKey("f")
+Sleep(4500)
+ReleaseKey("f")
+Sleep(300)
+end
+Sleep(500)
+PressAndReleaseKey("f1")
+Sleep(500)
+MoveMouseTo(x,y)
+Sleep(4000)
+end
+end
